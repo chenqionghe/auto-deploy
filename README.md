@@ -162,7 +162,7 @@ scripts-发送成功：node4
 Connection to node4 closed.
 ```
 
-下面我们再来批量执行一下远程ssh命令脚本，批量查看系统类型
+下面我们再来批量执行一下远程命令脚本，查看所有服务器系统类型
 ```
 sh mssh.sh "cat /etc/os-release|head -n 1"
 cat /etc/os-release|head -n 1
