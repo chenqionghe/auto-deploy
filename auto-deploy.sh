@@ -10,7 +10,7 @@ if [ ! -f ~/.ssh/id_rsa.pub ];then
     expect ssh-keygen.exp
 fi
 
-# 2.无交互分发公密钥
+# 2.无交互分发公钥
 for v in ${HostList}
 do
     expect send-sshkey.exp ~/.ssh/id_rsa.pub ${v}
@@ -34,9 +34,7 @@ done
 
 
 # 4.使用脚本文件安装
-for v in ${HostList}
-do
-    ssh -t -p ${Port} root@${v} /bin/bash ~/scripts/install.sh
-done
+sh ~/env/mssh.sh /bin/bash ~/scripts/install.sh
+
 
 
