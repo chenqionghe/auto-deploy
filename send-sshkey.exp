@@ -1,6 +1,6 @@
 #!/usr/bin/expect
 if { $argc != 2 } {
- send_user "usage: expect fenfa_sshkey.exp file host\n"
+ send_user "usage: expect send-sshkey.exp file host\n"
  exit
 }
 #define var
