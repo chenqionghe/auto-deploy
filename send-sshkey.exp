@@ -1,0 +1,15 @@
+#!/usr/bin/expect
+if { $argc != 2 } {
+ send_user "usage: expect fenfa_sshkey.exp file host\n"
+ exit
+}
+#define var
+set file [lindex $argv 0]
+set host [lindex $argv 1]
+set password "88888888"
+spawn ssh-copy-id -i $file -p 22 root@$host
+expect {
+        "yes/no" {send "yes\r";exp_continue}
+        "*password" {send "$password\r"}
+}
+expect eof
